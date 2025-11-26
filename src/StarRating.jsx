@@ -1,4 +1,24 @@
+import { range }  from './util';
+
 function StarRating({ rating }) {
+
+  const starIndices = range(rating);
+
+  return (
+    <div className="star-wrapper">
+      {starIndices.map((index) => {
+        return (
+          <img
+            key={index}
+            alt=""
+            className="gold-star"
+            src="https://sandpack-bundler.vercel.app/img/gold-star.svg"
+          />
+        )
+      })}
+    </div>
+  );
+
   /*
     Here's the markup for a single star:
 
@@ -14,16 +34,8 @@ function StarRating({ rating }) {
     If the rating is 4, we need 4 copies.
   */
 
-  return (
-    <div className="star-wrapper">
-      <img
-        key={crypto.randomUUID()}
-        alt=""
-        className="gold-star"
-        src="/star.svg"
-      />
-    </div>
-  )
+   
 }
 
-export default StarRating
+
+export default StarRating;
